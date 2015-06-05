@@ -178,7 +178,7 @@ obj.foo = 123; // add property `foo`
 
 /* === Undefined and null === */
 
-// Undefined and null have no properties, not even standard methods such as toString().
+// Undefined and null have no properties, not even standard methods such as toString()
 
 // Undefined means “no value”. Uninitialized variables are undefined
 var foo; // undefined
@@ -203,3 +203,66 @@ if (x === undefined || x === null) {
 if (!x) {
 
 }
+
+/* ----------------------------------------------------------------------------------------------------------------- */
+
+/* === Typeof and instanceof === */
+
+// typeof is mainly used for primitive values, while instanceof is used for objects
+// typeof returns a string describing the “type” of value
+typeof true; // returns 'boolean'
+typeof 'abc'; // returns 'string'
+
+typeof {}; // empty object literal returns 'object'
+typeof []; // empty array literal returns 'object'
+
+// The following table lists all results of typeof:
+/*
+ undefined 'undefined'
+ null 'object'
+ Boolean value 'boolean'
+ Number value 'number'
+ String value 'string'
+ Function 'function'
+ All other normal values 'object'
+ */
+
+var b = new Bar(); // object created by constructor Bar
+b instanceof Bar; // returns true
+({} instanceof Object); // returns true
+[] instanceof Array; // returns true
+[] instanceof Object; // Array is a subconstructor of Object, returns true
+
+undefined instanceof Object; // returns false
+null instanceof Object; // returns false
+
+/* ----------------------------------------------------------------------------------------------------------------- */
+
+/* === Booleans === */
+
+// The primitive boolean type comprises the values true and false
+// The following operators produce booleans:
+/*
+ Binary logical operators: && (And), || (Or)
+ Prefix logical operator: ! (Not)
+ Comparison operators:
+ Equality operators: ===, !==, ==, !=
+ Ordering operators (for strings and numbers): >, >=, <, <=
+ */
+
+/* ----------------------------------------------------------------------------------------------------------------- */
+
+/* === Truthy and Falsy === */
+
+// Whenever JavaScript expects a boolean value any value can be used. It will be interpreted as either true or false
+// The following values are interpreted as false:
+/*
+ undefined, null
+ Boolean: false
+ Number: -0, NaN
+ String: ''
+ */
+
+// All other values (including all objects!) are considered true.
+
+/* ----------------------------------------------------------------------------------------------------------------- */
