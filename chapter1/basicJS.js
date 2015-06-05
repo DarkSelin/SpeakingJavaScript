@@ -177,3 +177,29 @@ obj.foo = 123; // add property `foo`
 /* ----------------------------------------------------------------------------------------------------------------- */
 
 /* === Undefined and null === */
+
+// Undefined and null have no properties, not even standard methods such as toString().
+
+// Undefined means “no value”. Uninitialized variables are undefined
+var foo; // undefined
+// Missing parameters are undefined
+function f1(x) {
+    return x
+}
+f1();// returns undefined
+// If you read a nonexistent property, you get undefined
+var obj2 = {}; // empty object
+obj2.foo; // undefined
+
+// Null means “no object.” It is used as a nonvalue whenever an object is expected
+
+// Checking for undefined or null:
+// Explicit check:
+if (x === undefined || x === null) {
+
+}
+
+// Both undefined and null are considered false (remember that false, 0, NaN, and '' are also considered false):
+if (!x) {
+
+}
